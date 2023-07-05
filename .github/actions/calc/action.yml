@@ -1,0 +1,32 @@
+name: Our Add
+description: add two numbers
+inputs:
+  num-x:
+    default: 3
+  num-y:
+    default: 7
+outputs:
+  plus:
+    value: ${{ steps.plus.outputs.result }}
+  minus:
+    value: ${{ steps.minus.outputs.result }}
+  multiply:
+    value: ${{ steps.multiply.outputs.result }}
+  divide:
+    value: ${{ steps.divide.outputs.result }}
+runs:
+  using: "composite"
+  steps:
+    - run: echo "num-a=${{ inputs.num-a }} num-b=${{ inputs.num-b }}))"
+    - run: echo "result=$((${{ inputs.num-a }} + ${{ inputs.num-b }}))" >> "$GITHUB_OUTPUT"
+      id: plus
+      shell: bash
+    - run: echo "result=$((${{ inputs.num-a }} - ${{ inputs.num-b }}))" >> "$GITHUB_OUTPUT"
+      id: minus
+      shell: bash
+    - run: echo "result=$((${{ inputs.num-a }} * ${{ inputs.num-b }}))" >> "$GITHUB_OUTPUT"
+      id: multiply
+      shell: bash
+    - run: echo "result=$((${{ inputs.num-a }} / ${{ inputs.num-b }}))" >> "$GITHUB_OUTPUT"
+      id: divide
+      shell: bash
