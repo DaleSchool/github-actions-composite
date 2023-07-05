@@ -1,0 +1,18 @@
+name: Our Workflow
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: DaleSchool/calc-action@main
+#     steps:
+#       - uses: actions/checkout@v3
+#       - uses: ./.github/actions/calc
+#         id: calc
+#         with:
+#           x: 16
+#           y: 5
+#       - run: echo "plus=${{ steps.calc.outputs.plus }}"
+#       - run: echo "minus=${{ steps.calc.outputs.minus }}"
+#       - run: echo "multiply=${{ steps.calc.outputs.plus }}"
+#       - run: echo "divide=${{ steps.calc.outputs.divide }}"
