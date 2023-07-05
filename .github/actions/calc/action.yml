@@ -1,5 +1,5 @@
-name: Our Add
-description: add two numbers
+name: Our Calc
+description: calculate two numbers
 inputs:
   x:
     default: 3
@@ -17,17 +17,17 @@ outputs:
 runs:
   using: "composite"
   steps:
-    - run: echo "x=${{ inputs.x }} y=${{ inputs.y }}))"
+    - run: echo "x=${{ inputs.x }} y=${{ inputs.y }}"
       shell: bash
-    - run: echo "result=$((${{ inputs.x }} + ${{ inputs.y }}))" >> "$GITHUB_OUTPUT"
-      id: plus
+    - id: plus
+      run: echo "result=$((${{ inputs.x }} + ${{ inputs.y }}))" >> "$GITHUB_OUTPUT"
       shell: bash
-    - run: echo "result=$((${{ inputs.x }} - ${{ inputs.y }}))" >> "$GITHUB_OUTPUT"
-      id: minus
+    - id: minus
+      run: echo "result=$((${{ inputs.x }} - ${{ inputs.y }}))" >> "$GITHUB_OUTPUT"
       shell: bash
-    - run: echo "result=$((${{ inputs.x }} * ${{ inputs.y }}))" >> "$GITHUB_OUTPUT"
-      id: multiply
+    - id: multiply
+      run: echo "result=$((${{ inputs.x }} * ${{ inputs.y }}))" >> "$GITHUB_OUTPUT"
       shell: bash
-    - run: echo "result=$((${{ inputs.x }} / ${{ inputs.y }}))" >> "$GITHUB_OUTPUT"
-      id: divide
+    - id: divide
+      run: echo "result=$((${{ inputs.x }} / ${{ inputs.y }}))" >> "$GITHUB_OUTPUT"
       shell: bash
