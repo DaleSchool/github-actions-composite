@@ -9,7 +9,7 @@ jobs:
         id: calc
         with:
           x: 16
-          y: 4
+          y: 5
       - run: echo "plus=${{ steps.calc.outputs.plus }}"
       - run: echo "minus=${{ steps.calc.outputs.minus }}"
       - run: echo "multiply=${{ steps.calc.outputs.plus }}"
