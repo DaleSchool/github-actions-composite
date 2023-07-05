@@ -5,12 +5,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: ./.github/actions/add
-        id: add
+      - uses: ./.github/actions/calc
+        id: calc
         with:
           num-a: 2
           num-b: 4
-      - run: echo "${{ steps.add.outputs.result }}"
+      - run: echo "plus=${{ steps.calc.outputs.plus }}"
+      - run: echo "minus=${{ steps.calc.outputs.minus }}"
+      - run: echo "multiply=${{ steps.calc.outputs.plus }}"
+      - run: echo "divide=${{ steps.calc.outputs.divide }}"
       # - uses: ./.github/actions/install
       # - run: npm run build
 
