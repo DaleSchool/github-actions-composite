@@ -13,6 +13,6 @@ runs:
   steps:
     - run: echo "${{ inputs.num-a }} ${{ inputs.num-b }}"
       shell: bash
-    - run: echo "result=${{ inputs.num-a + inputs.num-b }}">> "$GITHUB_OUTPUT"
+    - run: echo "result=$((${{ inputs.num-a }} + ${{ inputs.num-b }}))">> "$GITHUB_OUTPUT"
       id: sum
       shell: bash
