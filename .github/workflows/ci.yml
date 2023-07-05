@@ -8,7 +8,7 @@ jobs:
       - uses: ./.github/actions/add
         id: add
         with:
-          # num-a: 2
+          num-a: 2
           num-b: 4
       - run: echo "${{ steps.add.outputs.result }}"
       # - uses: ./.github/actions/install
