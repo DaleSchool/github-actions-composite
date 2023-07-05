@@ -3,12 +3,12 @@ description: add two numbers
 inputs:
   num-a:
     required: true
-    default: 3
+    # default: 3
   num-b:
     default: 7
 outputs:
   result:
-    value: ${{ steps.sum.outputs.sum }}
+    value: ${{ steps.sum.outputs.result }}
 runs:
   using: "composite"
   steps:
