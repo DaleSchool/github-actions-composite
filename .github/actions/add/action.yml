@@ -1,0 +1,13 @@
+name: Our Add
+inputs:
+  num-a:
+  num-b:
+outputs:
+  sum:
+runs:
+  using: "composite"
+  steps:
+    - run: echo "${{ inputs.num-a }} ${{ inputs.num-b }}"
+      shell: bash
+    - run: echo 10 >> "$GITHUB_OUTPUT"
+      shell: bash
