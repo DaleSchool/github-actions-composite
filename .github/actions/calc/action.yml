@@ -18,6 +18,7 @@ runs:
   using: "composite"
   steps:
     - run: echo "num-a=${{ inputs.num-a }} num-b=${{ inputs.num-b }}))"
+      shell: bash
     - run: echo "result=$((${{ inputs.num-a }} + ${{ inputs.num-b }}))" >> "$GITHUB_OUTPUT"
       id: plus
       shell: bash
