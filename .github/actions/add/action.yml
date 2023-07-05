@@ -1,4 +1,5 @@
 name: Our Add
+description: add two numbers
 inputs:
   num-a:
   num-b:
