@@ -5,6 +5,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: DaleSchool/calc-action@main
+        with:
+          x: 12
+          y: 3
 #     steps:
 #       - uses: actions/checkout@v3
 #       - uses: ./.github/actions/calc
