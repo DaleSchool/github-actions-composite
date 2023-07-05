@@ -8,6 +8,9 @@ jobs:
         with:
           x: 12
           y: 3
+      - run: echo "plus=${{ steps.calc.outputs.plus }}"
+      - run: echo "minus=${{ steps.calc.outputs.minus }}"
+
 #     steps:
 #       - uses: actions/checkout@v3
 #       - uses: ./.github/actions/calc
