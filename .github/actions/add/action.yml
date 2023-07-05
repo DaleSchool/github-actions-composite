@@ -6,13 +6,13 @@ inputs:
   num-b:
     default: 7
 outputs:
-  sum:
+  result:
     value: ${{ steps.sum.outputs.sum }}
 runs:
   using: "composite"
   steps:
     - run: echo "${{ inputs.num-a }} ${{ inputs.num-b }}"
       shell: bash
-    - run: echo "sum=10" >> "$GITHUB_OUTPUT"
+    - run: echo "result=" ${{ inputs.num-a }} + ${{ inputs.num-b }}>> "$GITHUB_OUTPUT"
       id: sum
       shell: bash
