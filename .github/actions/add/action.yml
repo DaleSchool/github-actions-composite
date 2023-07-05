@@ -2,6 +2,7 @@ name: Our Add
 description: add two numbers
 inputs:
   num-a:
+    required: true
     default: 3
   num-b:
     default: 7
