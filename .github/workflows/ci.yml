@@ -8,8 +8,8 @@ jobs:
       - uses: ./.github/actions/calc
         id: calc
         with:
-          num-a: 2
-          num-b: 4
+          x: 16
+          y: 4
       - run: echo "plus=${{ steps.calc.outputs.plus }}"
       - run: echo "minus=${{ steps.calc.outputs.minus }}"
       - run: echo "multiply=${{ steps.calc.outputs.plus }}"
